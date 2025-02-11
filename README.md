@@ -16,35 +16,35 @@ Para llevar a cabo este proyecto, se desarrollarán los siguientes módulos:
 3. Módulo de Magia: 
       - Investigación, Invocación, Asignación y Dispersión de Hechizos;
       - Objetos
-  - Habilidades
-  - Maná
+      - Habilidades
+      - Maná
 4. Módulo de Interior:
-  - Exploración de Tierras
-  - Construcción y Destrucción de Edificios
-  - Recaudación de Impuestos
-  - Reclutamiento y Despidos de Unidades
-  - Defensa del Reino: Asignación de Hechizos y objetos para la defensa del Reino
+      - Exploración de Tierras
+      - Construcción y Destrucción de Edificios
+      - Recaudación de Impuestos
+      - Reclutamiento y Despidos de Unidades
+      - Defensa del Reino: Asignación de Hechizos y objetos para la defensa del Reino
 5. Módulo de Sociedad:
-  - Gremios: Listado, creación, gestión, y eliminación de Gremios
-  - Mensajería gremial
-  - Chat Gremial
-  - Ranking
+      - Gremios: Listado, creación, gestión, y eliminación de Gremios
+      - Mensajería gremial
+      - Chat Gremial
+      - Ranking
 6. Módulo de Diplomacia:
-  - Alianzas entre Magos: Creación, solicitudes, y eliminación
+      - Alianzas entre Magos: Creación, solicitudes, y eliminación
 7. Módulo de Guerra:
-  - Defensa del Reino: Asignación de Unidades para la Defensa del Reino
-  - Listados de Magos con acceso a batalla (no se podrá combatir con magos demasiado poderosos o demasiados débiles, además de aquellos que estén en periodo de gracia o inactividad)
-  - Batallas:
-    a. Infiltración y Robos
-    b. Guerra
-  - Espionaje
-  - Informe de Batalla o Espionaje
+      - Defensa del Reino: Asignación de Unidades para la Defensa del Reino
+      - Listados de Magos con acceso a batalla (no se podrá combatir con magos demasiado poderosos o demasiados débiles, además de aquellos que estén en periodo de gracia o inactividad)
+      - Batallas:
+            - Infiltración y Robos
+            - Guerra
+      - Espionaje
+      - Informe de Batalla o Espionaje
 8. Módulo de Oráculo:
-  - Mercado Negro
-  - Arena
-  - Cementerio
-  - Clasificación o Ranking
-  - Enciclopedia
+      - Mercado Negro
+      - Arena
+      - Cementerio
+      - Clasificación o Ranking
+      - Enciclopedia
   
 ## Pautas de Desarrollo
 
@@ -60,7 +60,7 @@ El desarrollo de este MMORPG se realizará con el seguimiento estricto de las si
 - Los datos personales de cada usuario serán los mínimos indispensables para el cumplimiento de lo anteriormente descrito y el funcionamiento de la aplicación.
 
 
-### Objetivos y Funcionalidades
+## Objetivos y Funcionalidades
 
 - **Gestión de Usuarios y Autenticación:**  
   Se ha extendido el paquete Shield para permitir el registro de usuarios (jugadores) con validación de datos (mediante expresiones regulares y protección CSRF) y la generación de un token de verificación enviado por email. Esto garantiza que los usuarios verifiquen su correo antes de poder acceder a la zona del juego.
@@ -73,24 +73,16 @@ El desarrollo de este MMORPG se realizará con el seguimiento estricto de las si
 
 - **Carga Modular de Recursos (CSS y JS):**  
   Se ha diseñado un sistema para cargar de forma modular los ficheros CSS y JS, diferenciando entre:
-  - Recursos comunes a toda la aplicación.
-  - Recursos para el área sin sesión (landing, login, registro, etc.) y para el área con sesión iniciada (el juego).
-  - Archivos comunes a un controlador concreto y archivos propios de un método o función específica.  
+      - Recursos comunes a toda la aplicación.
+      - Recursos para el área sin sesión (landing, login, registro, etc.) y para el área con sesión iniciada (el juego).
+      - Archivos comunes a un controlador concreto y archivos propios de un método o función específica.  
   Esto optimiza el rendimiento al cargar únicamente los recursos necesarios para cada vista.
 
 - **Internacionalización y Gestión de Mensajes:**  
   Todos los textos mostrados al usuario se centralizan en archivos de idioma (por ejemplo, `Auth.php` y `Messages.php` en `app/Language/es/`), permitiendo una fácil adaptación a otros idiomas y un mantenimiento centralizado de los mensajes.
 
-### Estructura y Organización
 
-El proyecto se organiza en varios directorios clave:
-- **app/Controllers:** Contiene los controladores de autenticación (LoginController, RegisterController, VerifyController), administración (UserManagement) y el Dashboard de usuario.
-- **app/Database/Migrations:** Incluye migraciones para crear y modificar las tablas de la base de datos (como bans, active_sessions, players y modificaciones en users).
-- **app/Language/es:** Ficheros de idioma para centralizar los mensajes y textos.
-- **app/Views:** Vistas para las diferentes áreas, como autenticación (login, register, confirm_override) y el dashboard.
-- **assets:** Directorio con subcarpetas para CSS y JS, que contiene recursos globales para áreas sin sesión y con sesión, así como archivos específicos por controlador y método.
-
-### Conclusión
+## Conclusión
 
 El objetivo principal del código es proporcionar una base sólida y escalable para la gestión de usuarios en "The Archmage". Esto se logra mediante:
 - Un sistema de autenticación y registro seguro y validado.
